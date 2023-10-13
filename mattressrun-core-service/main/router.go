@@ -11,7 +11,10 @@ func initiate() {
 
 	router.GET("/hotels", getHotels)
 	router.GET("hotels/:id", getHotelById)
-	router.Run("localhost:9090")
+	err := router.Run("localhost:9090")
+	if err != nil {
+		return
+	}
 }
 
 func getHotels(c *gin.Context) {
