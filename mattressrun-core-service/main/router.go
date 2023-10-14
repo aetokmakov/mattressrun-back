@@ -11,6 +11,7 @@ func initiate() {
 
 	router.GET("/hotels", getHotels)
 	router.GET("hotels/:id", getHotelById)
+	router.POST("/hotel", createHotel)
 	router.Run("localhost:9090")
 }
 
@@ -32,4 +33,14 @@ func getHotelById(c *gin.Context) {
 	}
 
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Hotel not found with passed Id!"})
+}
+
+func createHotel(c *gin.Context) {
+	var newHotel hotel
+	err := c.BindJSON(&newHotel)
+	if err != nil {
+		return
+	}
+	hotels = append(hotels, newHotel)
+	c.IndentedJSON(http.StatusCreated, newHotel)
 }
