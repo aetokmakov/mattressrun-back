@@ -22,7 +22,7 @@ public class HotelStayEntity {
     private SourceOfBooking sourceOfBooking;
     private BigDecimal pointsEarned;
     private BigDecimal priceForStay;
-    private CurrencyUnit currencyUnit;
+    private String currencyUnit;
     private BigDecimal monetaryAmount;
     private String hotelId;
 }

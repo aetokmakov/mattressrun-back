@@ -9,3 +9,6 @@ spring:
       connection-timeout: 10000
       idle-timeout: 60000
       minimum-idle: 1
+  liquibase:
+    change-log: classpath:liquibase/changelog/changelog.yml
+    enabled: true

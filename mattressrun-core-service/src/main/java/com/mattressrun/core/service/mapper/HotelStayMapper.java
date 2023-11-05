@@ -15,7 +15,6 @@ import javax.money.CurrencyUnit;
 public class HotelStayMapper {
 
     public HotelStayEntity toHotelStayEntity(HotelStayDto hotelStayDto) {
-        CurrencyUnit currencyUnit = CurrencyUnitBuilder.of(hotelStayDto.getCurrency(), "currency context").build();
         return HotelStayEntity.builder()
                 .name(hotelStayDto.getName())
                 .startDate(hotelStayDto.getStartDate())
@@ -23,7 +22,7 @@ public class HotelStayMapper {
                 .sourceOfBooking(hotelStayDto.getSourceOfBooking())
                 .pointsEarned(hotelStayDto.getPointsEarned())
                 .priceForStay(hotelStayDto.getPricePerNight())
-                .currencyUnit(currencyUnit)
+                .currencyUnit(hotelStayDto.getCurrency())
                 .monetaryAmount(hotelStayDto.getAmount())
                 .hotelId(hotelStayDto.getHotelId())
                 .build();
