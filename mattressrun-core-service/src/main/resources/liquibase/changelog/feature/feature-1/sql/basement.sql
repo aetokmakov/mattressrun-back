@@ -6,9 +6,9 @@ CREATE TABLE hotel_stay
     end_date          DATE,
     source_of_booking VARCHAR(255),
     points_earned     DECIMAL(19, 2),
-    price_for_stay    DECIMAL(19, 2),
-    currency_unit     VARCHAR(255),
-    monetary_amount   DECIMAL(19, 2),
+    price_per_night   DECIMAL(19, 2),
+    currency          VARCHAR(255),
+    amount            DECIMAL(19, 2),
     hotel_id          VARCHAR(255)
 );
 

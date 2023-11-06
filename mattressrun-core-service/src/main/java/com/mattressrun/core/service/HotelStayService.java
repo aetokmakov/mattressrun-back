@@ -1,6 +1,7 @@
 package com.mattressrun.core.service;
 
 import com.mattressrun.core.model.dto.HotelStayDto;
+import com.mattressrun.core.model.entity.HotelStayEntity;
 import com.mattressrun.core.repository.HotelStayRepository;
 import com.mattressrun.core.service.mapper.HotelStayMapper;
 import lombok.RequiredArgsConstructor;
@@ -18,5 +19,10 @@ public class HotelStayService {
     public void createHotelStay(HotelStayDto hotelStayDto) {
         var hotelStayEntity = hotelStayMapper.toHotelStayEntity(hotelStayDto);
         hotelStayRepository.save(hotelStayEntity);
+    }
+
+    public HotelStayDto getHotelStay(String hotelStayId) {
+        HotelStayEntity hotelStayEntity = hotelStayRepository.findById(hotelStayId).orElseThrow();
+        return hotelStayMapper.toHotelStayDto(hotelStayEntity);
     }
 }

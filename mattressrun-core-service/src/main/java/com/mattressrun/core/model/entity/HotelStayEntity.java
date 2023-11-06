@@ -6,7 +6,6 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.money.CurrencyUnit;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -15,14 +14,14 @@ import java.time.LocalDate;
 @Builder
 public class HotelStayEntity {
     @Id
-    private String id;
+    private Long id;
     private String name;
     private LocalDate startDate;
     private LocalDate endDate;
     private SourceOfBooking sourceOfBooking;
     private BigDecimal pointsEarned;
-    private BigDecimal priceForStay;
-    private String currencyUnit;
-    private BigDecimal monetaryAmount;
+    private BigDecimal pricePerNight;
+    private String currency;
+    private BigDecimal amount;
     private String hotelId;
 }

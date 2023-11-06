@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HotelStayDto {
+    private Long id;
     private String name;
     private LocalDate startDate;
     private LocalDate endDate;
